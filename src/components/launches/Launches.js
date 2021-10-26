@@ -1,4 +1,5 @@
 import React from 'react';
+import LaunchItem from './LaunchItem';
 
 const Launches = ({ launches, loading }) => {
   if (loading) {
@@ -7,9 +8,21 @@ const Launches = ({ launches, loading }) => {
 
   return (
     <div>
-      <p>Flight Number : {launches[0].flight_number}</p>
-      <p>Mission Name : {launches[0].mission_name}</p>
-      <p>Rocket Name : {launches[0].rocket.rocket_name}</p>
+      <LaunchItem
+        flightNumber={launches[0].flight_number}
+        missionName={launches[0].mission_name}
+        rocketName={launches[0].rocket.rocket_name}
+      />
+      <LaunchItem
+        flightNumber={launches[1].flight_number}
+        missionName={launches[1].mission_name}
+        rocketName={launches[1].rocket.rocket_name}
+      />
+      <LaunchItem
+        flightNumber={launches[2].flight_number}
+        missionName={launches[2].mission_name}
+        rocketName={launches[2].rocket.rocket_name}
+      />
     </div>
   );
 };
