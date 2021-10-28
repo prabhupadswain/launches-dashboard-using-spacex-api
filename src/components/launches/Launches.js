@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import LaunchItem from './LaunchItem';
+import LaunchesFilter from './LaunchesFilter';
 
 const Launches = ({ launches, loading }) => {
+  const [filteredLaunchStatus, setFilteredLaunchStatus] = useState('All');
+
+  const filterChangeHandler = (selectedLaunchStatus) => {
+    setFilteredLaunchStatus(selectedLaunchStatus);
+  };
+
   //Check if loading successful or not.
   if (loading) {
     return <h2>Loading...</h2>;
@@ -10,6 +18,10 @@ const Launches = ({ launches, loading }) => {
   //Display data in table format
   return (
     <div>
+      <LaunchesFilter
+        selected={filteredLaunchStatus}
+        onChangeFilter={filterChangeHandler}
+      />
       <table className='table table-bordered table-hover'>
         <thead>
           <tr>
