@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import LaunchItem from './LaunchItem';
 import LaunchesFilter from './LaunchesFilter';
+import Spinner from '../ui/Spinner';
 
 const Launches = ({ launches, loading }) => {
   const [filteredLaunchStatus, setFilteredLaunchStatus] = useState('All');
@@ -23,9 +24,9 @@ const Launches = ({ launches, loading }) => {
   }
 
   //Check if loading successful or not.
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+ if (loading) {
+  return <Spinner />; //Implementing the loading spinner
+}
 
   //Display data in table format
   return (
