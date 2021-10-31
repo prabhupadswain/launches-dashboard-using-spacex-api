@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './Modal.css';
+import ModalParagraph from './ModalParagraph';
+import ModalHeader from './ModalHeader';
 
 const Modal = (props) => {
   const singleLaunch = props.launchRecord;
@@ -14,7 +16,9 @@ const Modal = (props) => {
       <div className='modal-dialog' role='document'>
         <div className='modal-content'>
           <div className='modal-header'>
-            <h5 className='modal-title'>{singleLaunch.mission_name}</h5>
+            <div className='modal-title'>
+              <ModalHeader singleLaunch={singleLaunch} />
+            </div>
             <button
               type='button'
               className='close'
@@ -26,19 +30,7 @@ const Modal = (props) => {
             </button>
           </div>
           <div className='modal-body'>
-            <p>A Paragraph</p>
-          </div>
-          <div className='modal-footer'>
-            <button type='button' className='btn btn-primary'>
-              Save changes
-            </button>
-            <button
-              type='button'
-              className='btn btn-secondary'
-              data-dismiss='modal'
-            >
-              Close
-            </button>
+            <ModalParagraph singleLaunch={singleLaunch} />
           </div>
         </div>
       </div>
