@@ -3,6 +3,7 @@ import React, { Fragment, useState } from 'react';
 import LaunchItem from './LaunchItem';
 import './LaunchesList.css';
 import Modal from '../modal/Modal';
+import Backdrop from '../modal/Backdrop';
 
 const LaunchesList = (props) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -64,6 +65,7 @@ const LaunchesList = (props) => {
       {modalIsOpen && (
         <Modal onClose={closeModalHandler} launchRecord={singleLaunchRecord} />
       )}
+      {modalIsOpen && <Backdrop onClose={closeModalHandler} />}
     </Fragment>
   );
 };
