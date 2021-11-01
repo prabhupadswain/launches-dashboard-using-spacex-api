@@ -19,7 +19,15 @@ const LaunchItem = (props) => {
   else if (launchStatus === 'Success') classes = classes + 'btn-success';
   else classes = classes + 'btn-danger';
 
-  //Returning the jxs code
+  //Extract single launch from received props
+  const launch = props.launchRecord;
+
+  //Lift the launch data upto parent componenent. Lifting state up.
+  function displayDataHandler() {
+    props.onDisplayData(launch);
+  }
+
+  //Returning the jsx code
   return (
     <tr>
       <td>{props.flightNumber}</td>
@@ -28,7 +36,9 @@ const LaunchItem = (props) => {
       <td>{props.missionName}</td>
       <td>{props.orbitName}</td>
       <td>
-        <button className={classes}>{launchStatus}</button>
+        <button className={classes} onClick={displayDataHandler}>
+          {launchStatus}
+        </button>
       </td>
       <td>{props.rocketName}</td>
     </tr>
