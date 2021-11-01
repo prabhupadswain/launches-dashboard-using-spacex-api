@@ -1,0 +1,16 @@
+span {
+  margin-top: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: none;
+  width: calc(100% / 2);
+  color: darkred;
+  padding: none;
+}
+
+p {
+  text-align: left;
+  color: darkgreen;
+  padding: none;
+  margin: none;
+}
