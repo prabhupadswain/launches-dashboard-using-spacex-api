@@ -84,3 +84,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
 
 To learn React, check out the [React documentation](https://react.dev/).
+
+To learn React 17 as of now which is used in the current application on date April 5 2024, check out the [React 17 documentation](https://17.reactjs.org/).
